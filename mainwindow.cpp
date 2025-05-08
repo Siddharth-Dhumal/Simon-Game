@@ -8,14 +8,11 @@
 #include <QMenu>
 #include <QAction>
 #include <QSettings>
-#include <QApplication>    // for qApp->setStyleSheet()
+#include <QApplication>
 
 /**
  * @file MainWindow.cpp
  * @brief Implements the MainWindow class, handling GUI interactions and game events.
- *
- * @author Siddharth Dhumal, Abdulrahman Al Hattali, Devin Gupta
- * @date 3/13/2025
  */
 
 MainWindow::MainWindow(QWidget *parent)
@@ -76,7 +73,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->themeToggle, &QPushButton::clicked,
             this, &MainWindow::onThemeClicked);
 
-    // Load & apply saved mode:
     QSettings settings("YourCompany", "SimonSays");
     bool dark = settings.value("darkMode", false).toBool();
     m_darkMode = dark;
@@ -169,7 +165,6 @@ void MainWindow::setButtonState(bool enabled)
     ui->redButton->raise();
     ui->blueButton->raise();
 
-    // Visual feedback for disabled state
     const QString disabledStyle = "QPushButton:disabled { opacity: 0.5; }";
     ui->redButton->setStyleSheet(m_redStyle + disabledStyle);
     ui->blueButton->setStyleSheet(m_blueStyle + disabledStyle);
@@ -182,7 +177,6 @@ void MainWindow::updateThemeButtonText() {
         ui->themeToggle->setText("🌙 Dark Mode");
 }
 
-// Slot implementation:
 void MainWindow::onThemeClicked() {
     m_darkMode = !m_darkMode;
     QSettings("YourCompany", "SimonSays").setValue("darkMode", m_darkMode);

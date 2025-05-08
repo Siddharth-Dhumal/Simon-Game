@@ -5,15 +5,8 @@
 /**
  * @file GameModel.cpp
  * @brief Implements the GameModel class, managing game logic and sequence handling.
- *
- * @author Siddharth Dhumal, Abdulrahman Al Hattali, Devin Gupta
- * @date 3/13/2025
  */
 
-/**
- * @brief Constructs the GameModel object and initializes the game state.
- * @param parent Pointer to the parent QObject.
- */
 GameModel::GameModel(QObject *parent)
     : QObject{parent}, m_playerIndex(0),
     m_isPlayingSequence(false),

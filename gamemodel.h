@@ -9,9 +9,6 @@
 /**
  * @file GameModel.h
  * @brief Defines the GameModel class, handling game logic and state management.
- *
- * @author Siddharth Dhumal, Abdulrahman Al Hattali, Devin Gupta
- * @date 3/13/2025
  */
 
 class GameModel : public QObject

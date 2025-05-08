@@ -20,9 +20,6 @@ QT_END_NAMESPACE
 /**
  * @file MainWindow.h
  * @brief Defines the MainWindow class, handling the GUI and user interactions.
- *
- * @author Siddharth Dhumal, Abdulrahman Al Hattali, Devin Gupta
- * @date 3/13/2025
  */
 
 class MainWindow : public QMainWindow
@@ -85,6 +82,10 @@ private slots:
      * @brief Handles the end of a sequence.
      */
     void handleSequenceEnd();
+
+    /**
+     * @brief Toggles between light and dark mode when the theme action is clicked.
+     */
     void onThemeClicked();
 
 private:
@@ -93,11 +94,23 @@ private:
     QTimer m_flashTimer;    ///< Timer for handling button flashes.
     QString m_redStyle;     ///< Stores the red button style.
     QString m_blueStyle;    ///< Stores the blue button style.
-    QAction     *m_toggleThemeAction;
+    QAction *m_toggleThemeAction;    ///< Action item for toggling between light and dark themes.
+    bool m_darkMode;                 ///< Tracks whether dark mode is currently active.
+
+    /**
+     * @brief Applies the light mode stylesheet to the application UI.
+     */
     void applyLightMode();
+
+    /**
+     * @brief Applies the dark mode stylesheet to the application UI.
+     */
     void applyDarkMode();
-    bool    m_darkMode;
-    void    updateThemeButtonText();
+
+    /**
+     * @brief Updates the text label of the theme toggle action based on current mode.
+     */
+    void updateThemeButtonText();
 
     /**
      * @brief Sets the state of the buttons (enabled/disabled).
