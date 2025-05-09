@@ -15,10 +15,9 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="mainLayout">
-    <!-- Title & Theme Toggle -->
+    <!-- Title & Toggle -->
     <item>
      <layout class="QHBoxLayout" name="titleLayout">
-      <!-- Title Label -->
       <item>
        <widget class="QLabel" name="titleLabel">
         <property name="text"><string>Simon Says</string></property>
@@ -33,22 +32,25 @@
         </property>
        </widget>
       </item>
-      <!-- Spacer -->
       <item>
        <spacer name="horizontalSpacer">
         <property name="orientation"><enum>Qt::Horizontal</enum></property>
         <property name="sizeType"><enum>QSizePolicy::Expanding</enum></property>
-        <property name="sizeHint"><size><width>40</width><height>20</height></size></property>
        </spacer>
       </item>
-      <!-- Custom Theme Toggle Button -->
       <item>
        <widget class="QPushButton" name="themeToggle">
         <property name="text"><string>🌙 Dark Mode</string></property>
-        <property name="styleSheet"><string notr="true">QPushButton#themeToggle { background: none; border: none; font: bold 14px; }
-QPushButton#themeToggle:hover { color: #2980B9; }
-</string></property>
         <property name="minimumSize"><size><width>120</width><height>30</height></size></property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch><verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet"><string notr="true">
+QPushButton#themeToggle { background: none; border: none; font: bold 14px; }
+QPushButton#themeToggle:hover { color: #2980B9; }
+        </string></property>
        </widget>
       </item>
      </layout>
@@ -61,49 +63,92 @@ QPushButton#themeToggle:hover { color: #2980B9; }
       <item row="0" column="0">
        <widget class="QPushButton" name="redButton">
         <property name="minimumSize"><size><width>150</width><height>150</height></size></property>
-        <property name="styleSheet"><string notr="true">border-radius: 75px; background-color: #E74C3C; border: none; font: bold 18px;</string></property>
+        <property name="maximumSize"><size><width>150</width><height>150</height></size></property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch><verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet"><string notr="true">
+border-radius: 75px;
+background-color: #E74C3C;
+border: none;
+font: bold 18px;
+        </string></property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="QPushButton" name="blueButton">
         <property name="minimumSize"><size><width>150</width><height>150</height></size></property>
-        <property name="styleSheet"><string notr="true">border-radius: 75px; background-color: #3498DB; border: none; font: bold 18px;</string></property>
+        <property name="maximumSize"><size><width>150</width><height>150</height></size></property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch><verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet"><string notr="true">
+border-radius: 75px;
+background-color: #3498DB;
+border: none;
+font: bold 18px;
+        </string></property>
        </widget>
       </item>
       <item row="1" column="0">
        <widget class="QPushButton" name="greenButton">
         <property name="minimumSize"><size><width>150</width><height>150</height></size></property>
-        <property name="styleSheet"><string notr="true">border-radius: 75px; background-color: #2ECC71; border: none; font: bold 18px;</string></property>
+        <property name="maximumSize"><size><width>150</width><height>150</height></size></property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch><verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet"><string notr="true">
+border-radius: 75px;
+background-color: #2ECC71;
+border: none;
+font: bold 18px;
+        </string></property>
        </widget>
       </item>
       <item row="1" column="1">
        <widget class="QPushButton" name="yellowButton">
         <property name="minimumSize"><size><width>150</width><height>150</height></size></property>
-        <property name="styleSheet"><string notr="true">border-radius: 75px; background-color: #F1C40F; border: none; font: bold 18px;</string></property>
+        <property name="maximumSize"><size><width>150</width><height>150</height></size></property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch><verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet"><string notr="true">
+border-radius: 75px;
+background-color: #F1C40F;
+border: none;
+font: bold 18px;
+        </string></property>
        </widget>
       </item>
      </layout>
     </item>
-    <!-- Start Button -->
+    <!-- Start, Progress, Level/Score, Status -->
     <item>
      <widget class="QPushButton" name="startButton">
       <property name="text"><string>Start Game</string></property>
-      <property name="styleSheet"><string notr="true">QPushButton { background-color: #34495E; border-radius: 10px; color: white; font: bold 16px; }
-QPushButton:hover { background-color: #5D6D7E; }</string></property>
       <property name="minimumHeight"><number>50</number></property>
+      <property name="styleSheet"><string notr="true">
+QPushButton { background-color: #34495E; color: white; border-radius: 10px; font: bold 16px; }
+QPushButton:hover { background-color: #5D6D7E; }
+      </string></property>
      </widget>
     </item>
-    <!-- Progress Bar -->
     <item>
      <widget class="QProgressBar" name="progressBar">
-      <property name="textVisible"><bool>false</bool></property>
       <property name="minimumHeight"><number>20</number></property>
+      <property name="textVisible"><bool>false</bool></property>
      </widget>
     </item>
-    <!-- Level & Score -->
     <item>
      <layout class="QHBoxLayout" name="levelScoreLayout">
-      <property name="spacing"><number>40</number></property>
       <item>
        <widget class="QLabel" name="levelLabel">
         <property name="text"><string>Level: 0</string></property>
@@ -118,13 +163,12 @@ QPushButton:hover { background-color: #5D6D7E; }</string></property>
       </item>
      </layout>
     </item>
-    <!-- Status Label -->
     <item>
      <widget class="QLabel" name="statusLabel">
       <property name="text"><string/></property>
+      <property name="minimumHeight"><number>30</number></property>
       <property name="alignment"><set>Qt::AlignCenter</set></property>
       <property name="font"><font><pointsize>12</pointsize></font></property>
-      <property name="minimumHeight"><number>30</number></property>
      </widget>
     </item>
    </layout>

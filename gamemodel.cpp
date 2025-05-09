@@ -19,7 +19,7 @@ GameModel::GameModel(QObject *parent)
 void GameModel::startGame()
 {
     resetGame();
-    m_sequence.append(QRandomGenerator::global()->bounded(2));
+    m_sequence.append(QRandomGenerator::global()->bounded(4));
     playSequence();
 }
 
@@ -52,7 +52,7 @@ void GameModel::resetGame()
 
 void GameModel::nextRound()
 {
-    m_sequence.append(QRandomGenerator::global()->bounded(2));
+    m_sequence.append(QRandomGenerator::global()->bounded(4));
     m_playerIndex = 0;
     emit newRoundStarted();
     emit levelChanged(currentLevel());

@@ -52,6 +52,16 @@ private slots:
     void handleBlueButton();
 
     /**
+     * @brief Handles the event when the green button is pressed.
+     */
+    void handleGreenButton();
+
+    /**
+     * @brief Handles the event when the yellow button is pressed.
+     */
+    void handleYellowButton();
+
+    /**
      * @brief Starts the game session.
      */
     void startGame();
@@ -88,12 +98,20 @@ private slots:
      */
     void onThemeClicked();
 
+    /**
+     * @brief Slot triggered when the level changes. Updates the level display label.
+     * @param level The new game level.
+     */
+    void onLevelChanged(int level);
+
 private:
     Ui::MainWindow *ui;     ///< Pointer to the UI elements.
     GameModel m_gameModel;  ///< Instance of the GameModel for game logic.
     QTimer m_flashTimer;    ///< Timer for handling button flashes.
     QString m_redStyle;     ///< Stores the red button style.
     QString m_blueStyle;    ///< Stores the blue button style.
+    QString m_greenStyle;   ///< Stylesheet for the green button's default appearance.
+    QString m_yellowStyle;  ///< Stylesheet for the yellow button's default appearance.
     QAction *m_toggleThemeAction;    ///< Action item for toggling between light and dark themes.
     bool m_darkMode;                 ///< Tracks whether dark mode is currently active.
 
